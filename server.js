@@ -32,7 +32,7 @@ app.post("/generate", async (req, res) => {
 
     try {
         const images = [];
-        for (let i = 0; i < 2; i++) {  // Generate only 2 images instead of 3
+        for (let i = 0; i < 3; i++) {  // Generate only 2 images instead of 3
             await delay(5000);  // Wait 5 seconds to avoid rate limits
 
             const response = await axios.post(
