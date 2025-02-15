@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex flex-col items-center p-6">
+
+    <h1 class="text-3xl font-bold text-blue-600 mb-4">AI Image Generator</h1>
+
+    <form action="/generate" method="POST" class="bg-white shadow-md rounded p-4 w-96">
+        <input type="text" name="prompt" placeholder="Enter your prompt..."
+            class="w-full p-2 border rounded mb-2" required>
+        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Generate Images</button>
+    </form>
+
+    <% if (error) { %>
+        <p class="text-red-500 mt-4"><%= error %></p>
+    <% } %>
+
+    <% if (images.length > 0) { %>
+        <h2 class="text-xl font-semibold mt-6">Generated Images for: "<%= prompt %>"</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+            <% images.forEach(image => { %>
+                <img src="<%= image %>" alt="Generated Image" class="w-64 h-64 object-cover rounded shadow">
+            <% }); %>
+        </div>
+    <% } %>
+
+</body>
+</html>
