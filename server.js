@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 const HF_API_KEY = process.env.HF_API_KEY;
 const IMG_API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0";
-const VID_API_URL = "https://api-inference.huggingface.co/models/THUDM/CogVideoX-5b-I2V";
+// const VID_API_URL = "https://api-inference.huggingface.co/models/THUDM/CogVideoX-5b-I2V";
 
 if (!HF_API_KEY) {
     console.error("❌ Error: Missing Hugging Face API Key. Set HF_API_KEY in your .env file.");
